@@ -1,0 +1,26 @@
+{
+  "name": "palindrome-bootcamp",
+  "version": "1.0.0",
+  "description": "palindrome checker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/highfivenick/node-palindrome-bootcamp.git"
+  },
+  "author": "Nick Hawkins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/highfivenick/node-palindrome-bootcamp/issues"
+  },
+  "homepage": "https://github.com/highfivenick/node-palindrome-bootcamp#readme",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
