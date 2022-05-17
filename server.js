@@ -1,4 +1,4 @@
-const http = require('http');
+const http = require('http'); //telling server toget access to the network
 const fs = require('fs')
 const url = require('url');
 const querystring = require('querystring');
@@ -25,21 +25,18 @@ const server = http.createServer(function(req, res) {
       res.write(data);
       res.end();
     });
-  }
-  else if(page =='/api'){
-    if ("pali" in params){
-      let userInput = document.querySelector('.userInput').value
-      if(params['pali'] == `${userInput}`)
-      console.log(userInput)
-      let algor = userInput.toLowerCase() === userInput.toLowerCase().split('').reverse().join('') ? 'Palindrome!' : 'Not a palindrome'
-      res.writeHead(200, {'Content-Type': 'application/json'})
-      res.write(data)
+  }else if (page == '/api') {
+    if ('pali' in params) {
+      let userInput = params["pali"];
+      let word = `${userInput}`;
+      let algor = word.toLowerCase() === word.toLowerCase().split('').reverse().join('') ? 'palindrome' : 'Not a palindrome';
+      res.writeHead(200, {"Content-Type": "application/json"});
       const objToJson = {
-        result: algor
-      }
+        result: algor,
+      };
       res.end(JSON.stringify(objToJson))
     }
   }
 });
 
-server.listen(8001);
+server.listen(8000);
